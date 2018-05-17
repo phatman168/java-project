@@ -5,6 +5,15 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '2', artifactNumToKeepStr: '1'))
   }
 
+  stage('Unit Tests') {
+    agent {
+      label 'apache'
+    }
+    steps {
+      sh 'ant -f test.xml -v'
+      junit 'reports/result.xml'
+    }
+  }
   stages {
     stage('build') {
       steps {
