@@ -1,7 +1,6 @@
 pipeline {
   agent none
 
-
   environment {
     MAJOR_VERSION = 1
   }
