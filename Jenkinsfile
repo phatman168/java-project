@@ -61,7 +61,9 @@ pipeline {
       agent {
         label 'apache'
       }
-      sh "cp /var/www/html/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/green/rectangle_${env.BUILD_NUMBER}.jar"
+      steps {
+        sh "cp /var/www/html/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/green/rectangle_${env.BUILD_NUMBER}.jar"
+      }
     }
   }
 }
