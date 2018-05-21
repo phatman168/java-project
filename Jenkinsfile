@@ -48,7 +48,7 @@ pipeline {
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
       }
     }
-    stage("Test on Debian) {
+    stage("Test on Debian") {
       agent {
         docker 'openjdk:8u171-jre-slim'
       }
